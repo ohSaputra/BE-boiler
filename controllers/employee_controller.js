@@ -1,9 +1,18 @@
-const employee = require('../models/employee_model')
+const db = require('../config/db')
+const { Employee } = db
 
 const getEmployee = (request, respond) => {
   console.log(`Accessing GET Methods in /employee`)
+  
+  Employee
+    .findAll()
+    .then(employees => {
+      console.log(employees)
 
-  res.send(0)
+      respond
+        .status(200)
+        .json(employees)
+    })
 }
 
 const insertEmployee = (req, res) => {
