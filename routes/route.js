@@ -27,6 +27,10 @@ router
   .route(`/employee`)
   .get(employeeCtrl.getEmployee)
   .post(employeeCtrl.insertEmployee)
+
+router
+  .route(`/employee/:id`)
+  .get(employeeCtrl.getEmployeeByID)
   .patch(employeeCtrl.updateEmployee)
   .delete(employeeCtrl.removeEmployee)
 

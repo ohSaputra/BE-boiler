@@ -15,4 +15,4 @@ app.use('/assets', express.static('assets'))
 // routing
 app.use(route)
 
-app.listen(3000, () => console.log(`Run at Port 3000!`))
+app.listen(process.env.PORT, () => console.log(`Run at Port ${process.env.PORT}!`))
